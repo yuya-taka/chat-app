@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ * {
+  box-sizing: border-box;
+  border: 0.5px solid black;
+}
+
+.side_bar {
+  width: 300px;
+}
+

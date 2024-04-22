@@ -1,0 +1,34 @@
+<div class="main-chat">
+  <div class="main-top">
+    <p>hogefuga</p>
+    <div>
+      <%= link_to "チャットを終了する", "#" %>
+    </div>
+  </div>
+  <div class="posts">
+    <div class="post">
+      <div class="post-name_date">
+        <div class="post-name">Tom</div>
+        <div class="post-date">2020/3/31(Wed) 12:43:30</div>
+      </div>
+      <div class="post-content">おはよう</div>
+    </div>
+    <div class="post">
+      <div class="post-name_date">
+        <div class="post-name">Tom</div>
+        <div class="post-date">2020/3/31(Wed) 12:43:30</div>
+      </div>
+      <div class="post-content">おはよう</div>
+    </div>
+  </div>
+  <div class="main-bottom">
+    <%# <div class="test"> %>
+      <input type="text" placeholder="type a message"class="input-form">
+      <label class="form-image">
+        <span class="image">画像</span>
+        <input type="file" class="hidden">
+      </label>
+    <%# </div> %>
+    <input type="submit" value="送信" class="send-btn">
+  </div>
+</div>
