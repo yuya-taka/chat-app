@@ -4,25 +4,20 @@
       <%= link_to "#{current_user.name}", "users/#{current_user.id}/edit"%>
     </div>
     <div class="make-chat">
-      <%= link_to "チャットを作成する", "#" %>
+      <%= link_to "チャットを作成する", new_room_path %>
     </div>
   </div>
   <div class="room-list">
     <ul>
+      <% current_user.rooms.each do |room| %>
+        <li><%= room.name %></li>
+      <% end %>
       <li>techroom1</li>
       <li>techroom2</li>
       <li>techroom3</li>
       <li>techroom4</li>
       <li>techroom5</li>
       <li>techroom6</li>
-      <li>techroom7</li>
-      <li>techroom8</li>
-      <li>techroom9</li>
-      <li>techroom10</li>
-      <li>techroom11</li>
-      <li>techroom12</li>
-      <li>techroom13</li>
-      <li>techroom14</li>
     </ul>
   </div>
 </div>
