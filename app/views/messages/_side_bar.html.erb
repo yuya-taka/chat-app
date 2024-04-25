@@ -10,7 +10,7 @@
   <div class="room-list">
     <ul>
       <% current_user.rooms.each do |room| %>
-        <li><%= room.name %></li>
+        <li><%= link_to room.name, room_messages_path(room) %></li>
       <% end %>
       <li>techroom1</li>
       <li>techroom2</li>
