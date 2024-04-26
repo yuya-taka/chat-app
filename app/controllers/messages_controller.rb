@@ -33,9 +33,10 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content).merge(user_id: current_user.id)
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
     #メッセージのテーブルに情報を保存する際、:contentのカラム情報のみ保存される。
     #現在はユーザーと投稿を紐づけるのみなので、マージはこの記述で問題なし。
+    # 画像を保存するために、imageもpermitに追加。
   end
 
 end

@@ -11,8 +11,13 @@
           <%# lメソッドを使うことで、現地時刻に対応できる。 %>
         </div>
       </div>
-      <div class="post-content">
-        <%= message.content %>
-        <%# メッセージテーブルのなかの、コンテンツを呼び出す。 %>
+      <div>
+        <div class="post-content">
+          <%= message.content %>
+          <%# メッセージテーブルのなかの、コンテンツを呼び出す。 %>
+        </div>
+        <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached?%>
+        <%# メッセージに紐づいている、Active Recordに保存された画像が表示される。 %>
+        <%# if文の.attached?は、もし画像が存在していれば画像が読み込まれるという意味。 %>
       </div>
     </div>

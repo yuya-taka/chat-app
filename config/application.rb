@@ -13,6 +13,9 @@ module ChatApp
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
     #この２文で、時間設定が東京になる。
+    config.active_storage.variant_processor = :mini_magick
+    # minigagickの有効化
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
