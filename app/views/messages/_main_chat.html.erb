@@ -5,7 +5,8 @@
       <%# ルーティングがネストになっているので、パラメーターからルームの情報が引き出せる。 %>
     </p>
     <div>
-      <%= link_to "チャットを終了する", "#" %>
+      <%= link_to "チャットを終了する", room_path(@room), data: { turbo_method: :delete } %>
+      <%# HTTPメソッドをデリートにしたうえで、Prefixのroomのルートにつなぐ。 idとしては現在のルームidの値を引き渡す。%>
     </div>
   </div>
   <div class="posts">
