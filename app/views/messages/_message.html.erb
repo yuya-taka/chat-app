@@ -1,0 +1,18 @@
+
+    <div class="post">
+      <div class="post-name_date">
+        <div class="post-name">
+          <%= message.user.name %>
+          <%# partialで指定した、messageの中の、useridと紐づいている、ユーザー名を呼び出す。 %>
+        </div>
+        <div class="post-date">
+          <%= l message.created_at %>
+          <%# メッセージテーブルの中の、作成日時を呼び出す。 %>
+          <%# lメソッドを使うことで、現地時刻に対応できる。 %>
+        </div>
+      </div>
+      <div class="post-content">
+        <%= message.content %>
+        <%# メッセージテーブルのなかの、コンテンツを呼び出す。 %>
+      </div>
+    </div>
