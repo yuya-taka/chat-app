@@ -6,6 +6,13 @@ class Message < ApplicationRecord
   # Active Storageのテーブルで管理された画像ファイルのアソシエーションの記述。
   # imageはファイル名となる。これはパラメーターのキーにもなる。
 
-  validates :content, presence: true
+  validates :content, presence: true, unless: :was_attached?
+
+  def was_attached?
+    self.image.attached?
+  end
+
+
+  # validates :content, presence: true
   #message内容が空で投稿されるのを防ぐ。
 end
