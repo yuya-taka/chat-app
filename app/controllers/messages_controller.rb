@@ -4,11 +4,17 @@ class MessagesController < ApplicationController
     #↑本当はログインユーザーが持っている部屋のみ表示したい。
     @room = Room.find(params[:room_id])
     @message = Message.new
+    #新規作成のための入れ物
+
+    #@messages = Message.all
+    #DBに保存したチャットを表示するため。
+
+    @messages = @room.messages.includes(:user)
+    #①メッセージテーブルから呼び出すのではなく、部屋が持っているメッセージの中で、そのユーザーに関連づいているメッセージのみ表示する。
+    #.messageだけでなく、includesで、N＋１問題を回避。
   end
 
   def create
-    #@message = @room
-    #やろう。
     @room = Room.find(params[:room_id])
     #メッセージを作成する際に、どの部屋の情報かを@roomに代入する。
     @message = @room.messages.new(message_params)
@@ -17,6 +23,8 @@ class MessagesController < ApplicationController
       redirect_to room_messages_path(@room)
       #元居た部屋のページに遷移する
     else
+      @messages = @room.messages.includes(:user)
+      #②こちら、roomテーブルを参照して、そのユーザーを含むメッセージを代入している。
       render :index, status: :unprocessable_entity
       #元のページに戻りつつ、エラーがあったことを表示する。
     end

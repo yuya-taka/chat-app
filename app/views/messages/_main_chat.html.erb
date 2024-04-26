@@ -1,25 +1,18 @@
 <div class="main-chat">
   <div class="main-top">
-    <p>hogefuga</p>
+    <p>
+      <%= @room.name %>
+      <%# ルーティングがネストになっているので、パラメーターからルームの情報が引き出せる。 %>
+    </p>
     <div>
       <%= link_to "チャットを終了する", "#" %>
     </div>
   </div>
   <div class="posts">
-    <div class="post">
-      <div class="post-name_date">
-        <div class="post-name">Tom</div>
-        <div class="post-date">2020/3/31(Wed) 12:43:30</div>
-      </div>
-      <div class="post-content">おはよう</div>
-    </div>
-    <div class="post">
-      <div class="post-name_date">
-        <div class="post-name">Tom</div>
-        <div class="post-date">2020/3/31(Wed) 12:43:30</div>
-      </div>
-      <div class="post-content">おはよう</div>
-    </div>
+    <%#  %>
+    <%= render partial: 'message', collection: @messages %>
+    <%# 部分テンプレートを呼び出している。@messagesの中に入っている要素が一つ一つ挿入される。 %>
+    <%# それぞれの要素は、partialで指定した、messageとして扱われる。 %>
   </div>
   <div class="main-bottom">
     <%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f|%>
