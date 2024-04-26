@@ -74,3 +74,8 @@ end
 gem "devise"
 
 gem "pry-rails"
+
+gem 'mini_magick'
+#railsで画像の作成、サイズ変更、保存形式の変更ができるようになる。
+gem 'image_processing', '~> 1.2'
+#画像サイズを調整する機能を提供する。
