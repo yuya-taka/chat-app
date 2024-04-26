@@ -6,8 +6,9 @@
           <%# partialで指定した、messageの中の、useridと紐づいている、ユーザー名を呼び出す。 %>
         </div>
         <div class="post-date">
-          <%= message.created_at %>
+          <%= l message.created_at %>
           <%# メッセージテーブルの中の、作成日時を呼び出す。 %>
+          <%# lメソッドを使うことで、現地時刻に対応できる。 %>
         </div>
       </div>
       <div class="post-content">
